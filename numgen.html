@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Num generator</title>
+</head>
+<body>
+    <script>
+        let min=50;
+        let max=100;
+        let ans=Math.floor(Math.random()*(max-min))+50
+        console.log(ans)
+        let running=false;
+        while(!running){
+            let attempts=0;
+            let guess=window.prompt(`enter a number between ${min}-${max}`)
+            guess=Number(guess)
+            if(isNaN(guess)){
+                window.alert("please enter a number not a string")
+            }
+            else if(guess<min || guess>max){
+                window.alert("please enter a number between 50 -60")
+            }
+            else{
+                attempts++;
+                if(guess<ans){
+                    window.alert('is too low')
+                }
+                else if(guess>ans){
+                    window.alert('is too high')
+                }
+                else{
+                    window.alert(`CORRECT ANSWER!the answer ${ans} and took ${attempts} attempts`)
+                    running=false;
+                }
+                
+            }
+
+            
+        }
+    </script>
+</body>
+</html>
